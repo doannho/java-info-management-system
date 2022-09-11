@@ -21,15 +21,29 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 
 public class Main extends Application{
+	public static FileOutputStream twriter;
+	public static FileOutputStream cwriter;
+	public static void CreateWriter()throws IOException{
+		twriter = new FileOutputStream("TData.txt");
+		cwriter = new FileOutputStream("CData.txt");
+	}
 	public static ArrayList<Teacher>TechList = new ArrayList<>();
 	public static ArrayList<Course>CourList = new ArrayList<>();
-	public static void addTech(String name,String sex,String no) {
+	public static void addTech(String name,String sex,String no) throws IOException {
+		twriter.write((name+' '+sex+' '+no+'\n').getBytes());
 		TechList.add(new Teacher(name,sex,no));
 	}
-	public static void addCour(String name,String time,int duration,String techname) {
+	public static void addCour(String name,String time,int duration,String techname) throws IOException {
+		cwriter.write((name+' '+time+' '+duration+' '+techname+'\n').getBytes());
 		CourList.add(new Course(name,time,duration,techname));
 	}
 	@Override
@@ -46,7 +60,8 @@ public class Main extends Application{
 	public static void println(String s) {
 		System.out.println(s);
 	}
-	public static void main(String[]args) {
+	public static void main(String[]args) throws IOException {	
+		CreateWriter();
 		launch(args);
 	}
 }
