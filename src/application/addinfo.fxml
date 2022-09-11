@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="480.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8" 
+xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Label layoutX="78.0" layoutY="90.0" text="Teacher name:" />
+      <TextField fx:id="TeacherName" layoutX="175.0" layoutY="86.0" />
+      <Label layoutX="78.0" layoutY="128.0" prefHeight="15.0" prefWidth="84.0" text="Teacher sex:" />
+      <TextField fx:id="TeacherSex" layoutX="175.0" layoutY="124.0" />
+      <Label layoutX="78.0" layoutY="166.0" prefWidth="84.0" text="Teacher NO." />
+      <TextField fx:id="TeacherNO" layoutX="175.0" layoutY="162.0" />
+      <Button fx:id="TeacherInfo" layoutX="186.0" layoutY="206.0" 
+      mnemonicParsing="false" onAction="#addTeacherInfoAction" text="Submit Teacher INFO" />
+      <Label layoutX="78.0" layoutY="269.0" prefWidth="84.0" text="Course name:" />
+      <Label layoutX="78.0" layoutY="303.0" prefWidth="84.0" text="Course time:" />
+      <Label layoutX="78.0" layoutY="339.0" prefWidth="84.0" text="Duration:" />
+      <TextField layoutX="175.0" layoutY="265.0" />
+      <TextField layoutX="175.0" layoutY="299.0" />
+      <TextField layoutX="175.0" layoutY="335.0" />
+      <Button fx:id="CourseInfo" layoutX="189.0" layoutY="411.0" mnemonicParsing="false" onAction="#addCourseInfoAction" text="Submit Course INFO" />
+      <Label layoutX="78.0" layoutY="372.0" text="Teacher name:" />
+      <TextField layoutX="175.0" layoutY="368.0" />
+   </children>
+</AnchorPane>
