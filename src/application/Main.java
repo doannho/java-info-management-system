@@ -23,8 +23,8 @@ import javafx.stage.Stage;
 class Teacher{
 	public String name;
 	public String sex;
-	public int number;
-	public Teacher(String n,String s,int no) {
+	public String number;
+	public Teacher(String n,String s,String no) {
 		name=n;
 		sex=s;
 		number=no;
@@ -33,22 +33,24 @@ class Teacher{
 class Course{
 	String name;
 	String time;
-	String duration;
-	public Course(String n,String t,String d) {
+	int duration;
+	String tname;
+	public Course(String n,String t,int d,String techname) {
 		name=n;
 		time=t;
 		duration=d;
+		tname = techname;
 	}
 }
 
 public class Main extends Application{
 	public static ArrayList<Teacher>TechList = new ArrayList<>();
 	public static ArrayList<Course>CourList = new ArrayList<>();
-	public static void addTech(String name,String sex,int no) {
+	public static void addTech(String name,String sex,String no) {
 		TechList.add(new Teacher(name,sex,no));
 	}
-	public static void addCour(String name,String time,String duration) {
-		CourList.add(new Course(name,time,duration));
+	public static void addCour(String name,String time,int duration,String techname) {
+		CourList.add(new Course(name,time,duration,techname));
 	}
 	@Override
 	public void start(Stage primaryStage) {
@@ -83,6 +85,9 @@ public class Main extends Application{
 //		}
 		for(Teacher i:TechList) {
 			println("name:"+i.name+" sex:"+i.sex+" NO.:"+i.number);
+		}
+		for(Course i:CourList) {
+			println("name:"+i.name+" time"+i.time+" duration:"+i.duration+" teacher:"+i.tname);
 		}
 	}
 }

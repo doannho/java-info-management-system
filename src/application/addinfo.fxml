@@ -19,11 +19,11 @@ xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
       <Label layoutX="78.0" layoutY="269.0" prefWidth="84.0" text="Course name:" />
       <Label layoutX="78.0" layoutY="303.0" prefWidth="84.0" text="Course time:" />
       <Label layoutX="78.0" layoutY="339.0" prefWidth="84.0" text="Duration:" />
-      <TextField layoutX="175.0" layoutY="265.0" />
-      <TextField layoutX="175.0" layoutY="299.0" />
-      <TextField layoutX="175.0" layoutY="335.0" />
+      <TextField fx:id="CourseName" layoutX="175.0" layoutY="265.0" />
+      <TextField fx:id="CourseTime" layoutX="175.0" layoutY="299.0" />
+      <TextField fx:id="CourseDuration" layoutX="175.0" layoutY="335.0" />
       <Button fx:id="CourseInfo" layoutX="189.0" layoutY="411.0" mnemonicParsing="false" onAction="#addCourseInfoAction" text="Submit Course INFO" />
       <Label layoutX="78.0" layoutY="372.0" text="Teacher name:" />
-      <TextField layoutX="175.0" layoutY="368.0" />
+      <TextField fx:id="CourseTeacher" layoutX="175.0" layoutY="368.0" />
    </children>
 </AnchorPane>
