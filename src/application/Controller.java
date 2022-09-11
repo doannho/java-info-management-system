@@ -28,6 +28,8 @@ public class Controller{
 	Button CourseInfo;
 	@FXML
 	Button loadButton;
+	@FXML
+	Button loadTeaButton;
 	
 	@FXML
 	TextField TeacherName;
@@ -46,6 +48,8 @@ public class Controller{
 	
 	@FXML
 	TableView<Course>courseTable;
+	@FXML
+	TableView<Teacher>TeacherTable;
 	
 	@FXML
 	TableColumn namecol;
@@ -108,7 +112,24 @@ public class Controller{
 		teaccol.setCellValueFactory(
 		new PropertyValueFactory("tname")
 		);
-		courseTable.setItems(data);
-		//courseTable.getColumns().addAll(namecol,timecol,duracol,teaccol);		
+		courseTable.setItems(data);		
+	}
+	@FXML
+	public void loadTeacherAction(ActionEvent event)throws IOException{
+		ObservableList<Teacher>data = 
+				
+		FXCollections.observableArrayList(
+				Main.TechList
+				);
+		namecol.setCellValueFactory(
+		new PropertyValueFactory<>("name")
+		);
+		timecol.setCellValueFactory(
+		new PropertyValueFactory<>("sex")
+		);
+		duracol.setCellValueFactory(
+		new PropertyValueFactory("number")
+		);
+		TeacherTable.setItems(data);	
 	}
 }

@@ -1,21 +1,23 @@
 package application;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class Teacher{
-	public String name;
-	public String sex;
-	public String number;
+	private final SimpleStringProperty name;
+	private final SimpleStringProperty sex;
+	private final SimpleStringProperty number;
 	public Teacher(String n,String s,String no) {
-		name=n;
-		sex=s;
-		number=no;
+		name=new SimpleStringProperty(n);
+		sex=new SimpleStringProperty(s);
+		number=new SimpleStringProperty(no);
 	}
-	public String getname() {
-		return name;
+	public String getName() {
+		return name.get();
 	}
-	public String getsex() {
-		return sex;
+	public String getSex() {
+		return sex.get();
 	}
-	public String getnumber() {
-		return number;
+	public String getNumber() {
+		return number.get();
 	}
 }
