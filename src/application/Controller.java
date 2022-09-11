@@ -59,6 +59,12 @@ public class Controller{
 	TableColumn duracol;
 	@FXML
 	TableColumn teaccol;
+	@FXML
+	TableColumn tnamecol;
+	@FXML
+	TableColumn tsexcol;
+	@FXML
+	TableColumn tnocol;
 	
 	@FXML
 	public void addAction(ActionEvent event) throws IOException{
@@ -107,10 +113,10 @@ public class Controller{
 		new PropertyValueFactory<>("time")
 		);
 		duracol.setCellValueFactory(
-		new PropertyValueFactory("duration")
+		new PropertyValueFactory<>("duration")
 		);
 		teaccol.setCellValueFactory(
-		new PropertyValueFactory("tname")
+		new PropertyValueFactory<>("tname")
 		);
 		courseTable.setItems(data);		
 	}
@@ -121,14 +127,14 @@ public class Controller{
 		FXCollections.observableArrayList(
 				Main.TechList
 				);
-		namecol.setCellValueFactory(
-		new PropertyValueFactory<>("name")
+		tnamecol.setCellValueFactory(
+		new PropertyValueFactory<Teacher,String>("Name")
 		);
-		timecol.setCellValueFactory(
-		new PropertyValueFactory<>("sex")
+		tsexcol.setCellValueFactory(
+		new PropertyValueFactory<Teacher,String>("Sex")
 		);
-		duracol.setCellValueFactory(
-		new PropertyValueFactory("number")
+		tnocol.setCellValueFactory(
+		new PropertyValueFactory<Teacher,String>("Number")
 		);
 		TeacherTable.setItems(data);	
 	}

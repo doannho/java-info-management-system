@@ -3,21 +3,21 @@ package application;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Teacher{
-	private final SimpleStringProperty name;
-	private final SimpleStringProperty sex;
-	private final SimpleStringProperty number;
+	private final SimpleStringProperty Name;
+	private final SimpleStringProperty Sex;
+	private final SimpleStringProperty Number;
 	public Teacher(String n,String s,String no) {
-		name=new SimpleStringProperty(n);
-		sex=new SimpleStringProperty(s);
-		number=new SimpleStringProperty(no);
+		Name=new SimpleStringProperty(n);
+		Sex=new SimpleStringProperty(s);
+		Number=new SimpleStringProperty(no);
 	}
 	public String getName() {
-		return name.get();
+		return Name.get();
 	}
 	public String getSex() {
-		return sex.get();
+		return Sex.get();
 	}
 	public String getNumber() {
-		return number.get();
+		return Number.get();
 	}
 }
