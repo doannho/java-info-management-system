@@ -9,6 +9,8 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 
 import javafx.application.Application;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,28 +22,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-class Teacher{
-	public String name;
-	public String sex;
-	public String number;
-	public Teacher(String n,String s,String no) {
-		name=n;
-		sex=s;
-		number=no;
-	}
-}
-class Course{
-	String name;
-	String time;
-	int duration;
-	String tname;
-	public Course(String n,String t,int d,String techname) {
-		name=n;
-		time=t;
-		duration=d;
-		tname = techname;
-	}
-}
 
 public class Main extends Application{
 	public static ArrayList<Teacher>TechList = new ArrayList<>();
@@ -68,27 +48,6 @@ public class Main extends Application{
 	}
 	public static void main(String[]args) {
 		launch(args);
-//		HashMap<Teacher,Course>schedule;
-//		System.out.println("Choose an option:\n"
-//				+"1.Insert Info\n"
-//				+"2.Search Info\n"
-//				);
-//		Scanner sc = new Scanner(System.in);
-//		int option = sc.nextInt();
-//		if(option==1) {
-//			println("Please input the teacher name:");
-//			String tname;
-//			tname = sc.next();
-//			println("Please input the teacher sex:");
-//			String tsex;
-//			tsex = sc.next();
-//		}
-		for(Teacher i:TechList) {
-			println("name:"+i.name+" sex:"+i.sex+" NO.:"+i.number);
-		}
-		for(Course i:CourList) {
-			println("name:"+i.name+" time"+i.time+" duration:"+i.duration+" teacher:"+i.tname);
-		}
 	}
 }
 

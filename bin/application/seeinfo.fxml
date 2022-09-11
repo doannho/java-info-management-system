@@ -9,7 +9,7 @@
    <children>
       <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="469.0">
          <content>
-            <TableView prefHeight="399.0" prefWidth="468.0">
+            <TableView fx:id="courseTable" prefHeight="399.0" prefWidth="468.0">
                <columns>
                   <TableColumn fx:id="namecol" prefWidth="106.0" text="Course Name" />
                   <TableColumn fx:id="timecol" prefWidth="183.0" text="Course Time" />

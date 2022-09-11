@@ -94,10 +94,7 @@ public class Controller{
 		ObservableList<Course>data = 
 		
 		FXCollections.observableArrayList(
-			new Course("1","1",1,"1"),
-			new Course("2","2",2,"2"),
-			new Course("3","3",3,"3"),
-			new Course("4","4",4,"4")
+				Main.CourList
 				);
 		namecol.setCellValueFactory(
 		new PropertyValueFactory<>("name")
@@ -112,6 +109,6 @@ public class Controller{
 		new PropertyValueFactory("tname")
 		);
 		courseTable.setItems(data);
-		courseTable.getColumns().addAll(namecol,timecol,duracol,teaccol);		
+		//courseTable.getColumns().addAll(namecol,timecol,duracol,teaccol);		
 	}
 }
