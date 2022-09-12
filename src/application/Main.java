@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.List;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,6 +19,20 @@ import java.io.IOException;
 public class Main extends Application{
 	public static ArrayList<Teacher>TechList = new ArrayList<>();
 	public static ArrayList<Course>CourList = new ArrayList<>();
+	
+	public static void initList() throws IOException {
+		List<String>lines = Files.readAllLines(Paths.get("TData.txt"));
+		for(String i:lines) {
+			String[]arr = i.split("\\s+");
+			addTech(arr[0],arr[1],arr[2]);
+		}
+		List<String>clines = Files.readAllLines(Paths.get("CData.txt"));
+		for(String i:clines) {
+			String[]arr = i.split("\\s+");
+			addCour(arr[0],arr[1],Integer.parseInt(arr[2]),arr[3]);
+		}
+	}
+	
 	public static void addTech(String name,String sex,String no) throws IOException {
 		Files.write(Paths.get("TData.txt"),(name+' '+sex+' '+no+'\n').getBytes(),StandardOpenOption.APPEND);
 		TechList.add(new Teacher(name,sex,no));
@@ -40,6 +56,7 @@ public class Main extends Application{
 		System.out.println(s);
 	}
 	public static void main(String[]args) throws IOException {	
+		initList();
 		launch(args);
 	}
 }
