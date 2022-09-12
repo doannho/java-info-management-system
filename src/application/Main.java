@@ -1,6 +1,4 @@
 package application;
-
-
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -14,8 +12,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-
-
 public class Main extends Application{
 	public static ArrayList<Teacher>TechList = new ArrayList<>();
 	public static ArrayList<Course>CourList = new ArrayList<>();
@@ -24,12 +20,12 @@ public class Main extends Application{
 		List<String>lines = Files.readAllLines(Paths.get("TData.txt"));
 		for(String i:lines) {
 			String[]arr = i.split("\\s+");
-			addTech(arr[0],arr[1],arr[2]);
+			TechList.add(new Teacher(arr[0],arr[1],arr[2]));
 		}
 		List<String>clines = Files.readAllLines(Paths.get("CData.txt"));
 		for(String i:clines) {
 			String[]arr = i.split("\\s+");
-			addCour(arr[0],arr[1],Integer.parseInt(arr[2]),arr[3]);
+			CourList.add(new Course(arr[0],arr[1],Integer.parseInt(arr[2]),arr[3]));
 		}
 	}
 	
